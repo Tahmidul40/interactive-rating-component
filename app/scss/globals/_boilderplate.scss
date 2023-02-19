@@ -1,0 +1,28 @@
+@use "../util" as u;
+@use "./colors" as c;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: u.$font;
+  font-size: 15px;
+  background-color: c.$very-dark-blue;
+  color: c.$white;
+  padding-top: 192px;
+
+  @include u.breakpoint-down(medium) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}

@@ -1,0 +1,138 @@
+@use "../util" as u;
+@use "../globals" as g;
+
+.container {
+  max-width: 410px;
+  margin-inline: auto;
+  padding: 30px;
+  background-color: g.$dark-blue;
+  border-radius: 18px;
+
+  .rating {
+    display: block;
+
+    .star {
+      width: 50px;
+      height: 50px;
+      background-color: g.$medium-grey;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: u.rem(30);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      color: g.$light-grey;
+      margin-bottom: 30px;
+    }
+
+    .rating-num {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: g.$medium-grey;
+        margin-bottom: u.rem(30);
+        color: g.$light-grey;
+
+        &:hover {
+          background-color: g.$orange;
+          color: g.$white;
+          cursor: pointer;
+        }
+
+        @include u.breakpoint-down(medium) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .mark {
+        background-color: g.$light-grey;
+        color: g.$dark-blue;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      padding: u.rem(16);
+      background-color: g.$orange;
+      border: none;
+      border-radius: u.rem(26);
+      color: g.$white;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: g.$white;
+        color: g.$orange;
+      }
+    }
+
+    #hint {
+      text-align: center;
+      color: g.$orange;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .result {
+    display: none;
+    text-align: center;
+
+    img {
+      margin-bottom: 10px;
+    }
+
+    .rating-preview {
+      p {
+        display: inline-block;
+        padding: 10px 22px 8px;
+        color: g.$orange;
+        background-color: g.$medium-grey;
+        border-radius: u.rem(18);
+      }
+    }
+
+    .big {
+      font-size: u.rem(24);
+      margin-bottom: 18px;
+    }
+
+    .description {
+      color: g.$light-grey;
+    }
+  }
+
+  .show {
+    display: block;
+  }
+}
+
+footer {
+  margin-top: auto;
+  font-size: 11px;
+  text-align: center;
+  padding-top: 190px;
+  padding-bottom: 8px;
+  color: g.$light-grey;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
